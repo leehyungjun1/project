@@ -1,0 +1,56 @@
+You are required to create a simple CSV parser with data validation in the MessyCsvParser class.
+OK!!!
+Requirements
+
+Your parsing method in the MessyCsvParser class must :
+
+1. Load a CSV file from $path, which is an argument of Messy CsvParser::parse.
+2. Parse it.
+3. Check the basic data type for:
+
+id(non-empty int)
+first_name(non-empty string)
+last_name(non-empty string)
+birth_date(non-empty string with valid date format)
+books_ids(collection of ints)
+
+if some fields are broken(e.g. wrong date type, whitespaces, missing field), MessyCsvParser::parse should throw an instance of MessyCsvParserException.
+Convert each entry to an instance of UserDTO.
+The method should return an array of UserDTO instances.
+
+Assumptions
+
+A CSV file has the following format:
+
+id, first_name, last_name, birth_date, books_ids
+1\t, test, test, 1989-01-01, 1|2|3
+
+Example MessyCsvParser::parse result:
+
+aray(1) {
+	[0]=>
+		object(App\UserDTO)#376 (5) {
+			["id" : "App\UserDTO" : private] => int(1)
+			["firstName" : "App\UserDTO" : private] => string(4) "test"
+			["lastName" : "App\UserDTO" : private] => string(4) "test"
+			["date" : "App\UserDTO" : private] => ["date"] => string(26) "1989-01-01 00:00:00.000000"
+			["timezone_type"]=>int(3)["timezone"]=>string(3)"UTC"
+			["booksIds":"App\UserDTO" : private]=>array(3) {
+				[0]=>string(1)"1"[1]=>string(1)"2"[2]=>string(1)"3"
+			}
+		}
+	}
+
+
+
+UserDTO has all required fields to do this task, is already implemented and in the same namespace as MessyCsvParser and ready to use:
+
+<?php
+namespace App:
+
+class UserDTO
+{
+	/**
+	* @var int
+	*/
+	private $id

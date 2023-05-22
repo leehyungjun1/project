@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="fm" action="./test.php" method="post" enctype="multipart/form-data">
+    <form name="fm" method="post" enctype="multipart/form-data">
         <div>
         <label for="file">Choose file to upload</label>
         <input type="file" id="file" name="file">

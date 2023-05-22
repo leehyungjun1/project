@@ -1,0 +1,2 @@
+id,first_name,last_name,birth_date,books_ids
+1, test, test, 1989-01-01, 1|2|3
