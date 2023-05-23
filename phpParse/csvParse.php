@@ -21,10 +21,11 @@ class MessyCsvParser
 
     private function loadCsvFile(string $path): array
     {
+        
         $rows = [];
 
         $file = fopen($path, 'r');
-        if ($file) {
+       if ($file) {
             $header = fgetcsv($file); // 첫 번째 행을 헤더로 읽어옵니다.
 
             while (($row = fgetcsv($file)) !== false) {
@@ -88,6 +89,5 @@ class UserDTO
 }
 
 $csvParse = new MessyCsvParser();
-$data = $csvParse->parse('./1.csv');
+$data = $csvParse->parse('./2.csv');
 
-print_r($data);
