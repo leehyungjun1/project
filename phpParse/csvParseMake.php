@@ -36,7 +36,7 @@ class CsvParse {
         }
 
         $booksIds = explode('|', trim($row['books_ids']));
-        //$result = array($id, $firstName, $lastName, $chkBirthDate, $booksIds);
+        //return $result = array($id, $firstName, $lastName, $chkBirthDate, $booksIds);
         return new userDto($id, $firstName, $lastName, $chkBirthDate, $booksIds);
     }
 
